@@ -9,7 +9,6 @@ function _drawGifts() {
   setHTML('giftList', contentHTML)
 }
 
-
 export class SandboxController {
   constructor() {
     AppState.on('account', sandboxService.getGifts)
@@ -24,6 +23,14 @@ export class SandboxController {
       event.target.reset();
     } catch (error) {
       console.error(error);
+    }
+  }
+
+  async removeOpenedGift(id) {
+    try {
+      await sandboxService.removeOpenedGift(id);
+    } catch (error) {
+      console.error('attempted to remove an already opened gift', error);
     }
   }
 

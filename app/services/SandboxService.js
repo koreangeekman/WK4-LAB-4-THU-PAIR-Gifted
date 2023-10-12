@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Gift } from "../models/Gift.js";
+import { Pop } from "../utils/Pop.js";
 import { api } from "./AxiosService.js";
 
 class SandboxService {
@@ -23,6 +24,18 @@ class SandboxService {
     }
   }
 
+  async removeOpenedGift(id) {
+    try {
+      const yes = await Pop.confirm('Are you sure you want to remove this GIFt?')
+      if (!yes) { return }
+      const res = await api.delete(`api/gifts/${id}`)
+      // console.log('attempting delete', res.data);
+      AppState.gifts = AppState.gifts.filter(gift => gift.id != id)
+    } catch (error) {
+      console.error('attempted to remove an already opened gift', error);
+
+    }
+  }
 }
 
 export const sandboxService = new SandboxService();
