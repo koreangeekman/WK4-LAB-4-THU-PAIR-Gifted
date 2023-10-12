@@ -7,7 +7,7 @@ function _drawGIFs() {
   let contentHTML = '';
   console.log('search results length', AppState.searchResults.length);
   AppState.searchResults.forEach(result => contentHTML += `
-      <div class="card cardTemplate m-3" onclick="app.GiftController.selectGIF('${result.id}')">
+      <div class="card cardTemplate m-3" onclick="app.GiftController.selectGIF('${result.images.preview_gif.url}')">
         <img src="${result.images.preview_gif.url}" alt="${result.title}"></img>
       </div>
       `)
@@ -35,8 +35,10 @@ export class GiftController {
     _drawGIFs();
   }
 
-  selectGIF(id) {
-
+  selectGIF(url) {
+    document.getElementById('url').value = url
+    document.getElementById('giftList').classList.remove('d-none')
+    document.getElementById('listGIFs').classList.add('d-none')
   }
 
 }
