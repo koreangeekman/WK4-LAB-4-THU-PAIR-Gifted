@@ -1,6 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Gift } from "../models/Gift.js";
-import { api } from "../services/AxiosService.js";
+import { api, giphyApi } from "../services/AxiosService.js";
 
 class GiftService {
 
@@ -17,6 +17,19 @@ class GiftService {
       console.error('attempted to open gift', error);
     }
   }
+
+  async search(query) {
+    console.log(query);
+    const res = await giphyApi.get('search', {
+      params: {
+        q: query
+      }
+    });
+    console.log(res.data);
+    // AppState.search
+
+  }
+
 }
 
 export const giftService = new GiftService();

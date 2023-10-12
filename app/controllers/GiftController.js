@@ -13,4 +13,9 @@ export class GiftController {
     }
   }
 
+  search() {
+    const query = document.getElementById('search').value
+    giftService.search(query)
+  }
+
 }

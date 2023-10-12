@@ -49,15 +49,16 @@
             <p class="fs-4">Gifted</p>
             <form class="" onsubmit="app.SandboxController.addGift(event)">
               <label for="tag">Tag</label>
-              <input class="form-control mb-3" type="text" id="tag">
+              <input class="form-control mb-3" name="tag" type="text" id="tag" placeholder="Tagline">
               <label for="url">Url</label>
-              <input class="form-control" type="text" id="url">
+              <input class="form-control" name="url" type="text" id="url" placeholder="Add URL">
               <button class="btn btn-primary mt-3" type="submit">Submit</button>
             </form>
             <hr class="text-white">
             <span class="d-flex align align-items-center">
-              <input class="form-control me-2" type="search" name="search" id="search">
-              <i type="button" onclick="" class="fs-2 text-white bg-success mdi mdi-magnify"></i>
+              <input class="form-control me-2" type="search" name="search" id="search" placeholder="Search for GIFs">
+              <i type="button" onclick="app.GiftController.search()"
+                class="fs-2 text-white bg-success mdi mdi-magnify"></i>
             </span>
           </div>
 
