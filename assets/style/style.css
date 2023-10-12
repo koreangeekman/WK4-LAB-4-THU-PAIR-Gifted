@@ -17,6 +17,11 @@
   background-color: #12345678;
 }
 
+.overlayMe {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
 
 #giftList {
   height: 88dvh;

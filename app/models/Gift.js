@@ -12,10 +12,10 @@ export class Gift {
   get giftClosedTemplate() {
     if (this.opened) {
       return `
-      <div class="card cardTemplate m-3">
-      <img src="${this.url}" alt="the gift">
-      <p class="tagLine blueBG text-center">${this.tag}</p>
-      ${this.isOpened}
+      <div class="card cardTemplate m-3 mb-4">
+        ${this.isOpened}
+        <img src="${this.url}" alt="the gift">
+        <p class="tagLine blueBG text-center">${this.tag}</p>
       </div>
       `
     }
@@ -29,7 +29,7 @@ export class Gift {
   get isOpened() {
     if (this.opened && this.creatorId == AppState.account.id) {
       console.log(this.creatorId, AppState.account.id);
-      return `<i class="fs-4 text-danger mdi mdi-trash-can" onclick="app.SandboxController.removeOpenedGift('${this.id}')"></i>`
+      return `<i class="fs-1 text-danger overlayMe p-2 mdi mdi-trash-can" type="button" onclick="app.SandboxController.removeOpenedGift('${this.id}')"></i>`
     }
     return ''
   }
