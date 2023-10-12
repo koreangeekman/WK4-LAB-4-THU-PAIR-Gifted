@@ -1,3 +1,4 @@
+import { Gift } from "./models/Gift.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
@@ -10,9 +11,18 @@ class ObservableAppState extends EventEmitter {
   account = null
   socketData = []
 
+  // SECTION GLOBAL VARIABLES
+
+  gifts = []
+
+  selectedGift = null
+
+
+  // !SECTION GLOBAL VARIABLES
+
   // Used to load initial data
   init() {
-
+    // this.gifts = loadState('gifts',new [Gift])
   }
 }
 

@@ -1,4 +1,5 @@
-import { HomeController } from "./controllers/HomeController.js";
+import { GiftController } from "./controllers/GiftController.js";
+import { SandboxController } from "./controllers/SandboxController.js";
 
 /**
  * Register your routes for the application here
@@ -7,16 +8,12 @@ import { HomeController } from "./controllers/HomeController.js";
 export const router = [
   {
     path: '',
-    controller: HomeController,
+    controller: [GiftController, SandboxController],
     // @ts-ignore
     view: null
   },
 
 ]
-
-
-
-
 
 
 /**
