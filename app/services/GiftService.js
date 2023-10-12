@@ -25,8 +25,8 @@ class GiftService {
         q: query
       }
     });
-    console.log(res.data);
-    // AppState.search
+    AppState.searchResults = res.data.data
+    console.log(AppState.searchResults);
 
   }
 

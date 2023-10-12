@@ -13,7 +13,7 @@ export const giphyApi = axios.create({
   baseURL: 'http://api.giphy.com/v1/gifs',
   timeout: 8000,
   params: {
-    key: 'o8A5qQ1Tjmz90smGY35P222I8AIunA9d',
+    api_key: 'o8A5qQ1Tjmz90smGY35P222I8AIunA9d',
     // @ts-ignore
     rating: 'pg',
     limit: 10

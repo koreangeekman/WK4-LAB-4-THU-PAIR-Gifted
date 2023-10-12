@@ -17,6 +17,7 @@ class ObservableAppState extends EventEmitter {
 
   selectedGift = null
 
+  searchResults = null
 
   // !SECTION GLOBAL VARIABLES
 
