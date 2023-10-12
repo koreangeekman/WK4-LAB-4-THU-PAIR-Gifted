@@ -1,1 +1,24 @@
 /* BASIC STYLES HERE */
+
+.cardTemplate {
+  object-fit: cover;
+  height: 30dvh;
+  width: 30dvh;
+  background-position: center;
+  color: white;
+}
+
+.cardTemplate img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blueBG {
+  background-color: #12345678;
+}
+
+
+#giftList {
+  height: 88dvh;
+  overflow-y: scroll;
+}

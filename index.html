@@ -40,20 +40,50 @@
 
   <!-- SECTION -->
   <main>
-
     <section id="router-view">
       <!-- primary viewport -->
+      <div class="container-fluid">
+        <div class="row justify-content-evenly">
+
+          <div class="col-3 p-3 bg-success">
+            <p class="fs-4">Gifted</p>
+            <form class="" onsubmit="app.SandboxController.addGift(event)">
+              <label for="tag">Tag</label>
+              <input class="form-control mb-3" type="text" id="tag">
+              <label for="url">Url</label>
+              <input class="form-control" type="text" id="url">
+              <button class="btn btn-primary mt-3" type="submit">Submit</button>
+            </form>
+            <hr class="text-white">
+            <span class="d-flex align align-items-center">
+              <input class="form-control me-2" type="search" name="search" id="search">
+              <i type="button" onclick="" class="fs-2 text-white bg-success mdi mdi-magnify"></i>
+            </span>
+          </div>
+
+          <div class="col-8 p-3">
+
+            <div id="giftList" class="d-flex flex-wrap justify-content-center">
+              <!-- draw gifts -->
+
+              <!-- <div class="w-25 card cardTemplate m-3" style="background-image:url('${this.url}')">
+                <img 
+                  src="https://images.unsplash.com/photo-1592903297149-37fb25202dfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2lmdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="wrapping paper">
+                <p class="tagLine blueBG text-center">${this.tag}</p>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </section>
 
 
   </main>
 
-  <!-- SECTION -->
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
-    </div>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
